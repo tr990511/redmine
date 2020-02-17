@@ -2,7 +2,9 @@
 
 # See https://github.com/shakacode/react_on_rails/blob/master/docs/basics/configuration.md
 # for many more options.
-
+ActiveSupport.on_load(:action_view) do
+  include ReactOnRailsHelper
+end
 ReactOnRails.configure do |config|
   # This configures the script to run to build the production assets by webpack. Set this to nil
   # if you don't want react_on_rails building this file for you.
