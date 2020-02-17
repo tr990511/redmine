@@ -19,8 +19,8 @@
 
 Rails.application.routes.draw do
   #get '/hello_world', to: 'hello_world#index'
-  root :to => 'hello_world#index', :as => 'home'
-  #root :to => 'welcome#index', :as => 'home'
+  #root :to => 'hello_world#index', :as => 'home'
+  root :to => 'welcome#index', :as => 'home'
 
   match 'login', :to => 'account#login', :as => 'signin', :via => [:get, :post]
   match 'logout', :to => 'account#logout', :as => 'signout', :via => [:get, :post]
