@@ -3,7 +3,7 @@ source 'https://gems.ruby-china.com'
 #react_on_rails
 gem "react_on_rails", "11.1.4" # Update to the current version
 gem "webpacker", "~> 3" # Newer versions might be supported
-
+gem 'mini_racer'
 ruby '>= 2.3.0', '< 2.7.0'
 gem 'bundler', '>= 1.12.0'
 
@@ -105,3 +105,5 @@ end
 Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
   eval_gemfile file
 end
+
+gem 'mini_racer', platforms: :ruby
