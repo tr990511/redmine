@@ -374,6 +374,22 @@ Lint/EmptyWhen:
     - 'app/controllers/issues_controller.rb'
     - 'app/controllers/wiki_controller.rb'
 
+<<<<<<< HEAD
+=======
+# Configuration parameters: AllowComments.
+Lint/HandleExceptions:
+  Exclude:
+    - 'app/controllers/activities_controller.rb'
+    - 'app/models/import.rb'
+    - 'db/migrate/085_add_role_tracker_old_status_index_to_workflows.rb'
+    - 'lib/redmine/scm/adapters/cvs_adapter.rb'
+    - 'lib/redmine/scm/adapters/subversion_adapter.rb'
+
+Lint/IneffectiveAccessModifier:
+  Exclude:
+    - 'app/models/auth_source_ldap.rb'
+
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
 Lint/InterpolationCheck:
   Exclude:
     - 'app/models/user.rb'

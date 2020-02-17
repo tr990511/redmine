@@ -59,6 +59,7 @@ class ProjectQueryTest < ActiveSupport::TestCase
   def test_available_columns_should_include_project_custom_fields
     query = ProjectQuery.new
     assert_include :cf_3, query.available_columns.map(&:name)
+<<<<<<< HEAD
   end
 
   def test_display_type_default_should_equal_with_setting_project_list_display_type
@@ -68,5 +69,7 @@ class ProjectQueryTest < ActiveSupport::TestCase
         assert_equal t, q.display_type
       end
     end
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
   end
 end

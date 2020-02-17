@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+<<<<<<< HEAD
 ruby '>= 2.3.0', '< 2.7.0'
 gem 'bundler', '>= 1.12.0'
 
@@ -7,6 +8,15 @@ gem "rails", "5.2.4.1"
 gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
 gem 'rouge', '~> 3.16.0'
 gem 'request_store', '~> 1.5.0'
+=======
+ruby '>= 2.3.0', '< 2.7.0' if Bundler::VERSION >= '1.12.0'
+gem "bundler", ">= 1.5.0"
+
+gem "rails", "5.2.4.1"
+gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
+gem "rouge", "~> 3.12.0"
+gem "request_store", "~> 1.4.1"
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
 gem "mini_mime", "~> 1.0.1"
 gem "actionpack-xml_parser"
 gem "roadie-rails", (RUBY_VERSION < "2.5" ? "~> 1.3.0" : "~> 2.1.0")
@@ -80,7 +90,11 @@ end
 group :test do
   gem "rails-dom-testing"
   gem 'mocha', '>= 1.4.0'
+<<<<<<< HEAD
   gem 'simplecov', (RUBY_VERSION < '2.4' ? '~> 0.17.0' : '~> 0.18.1'), :require => false
+=======
+  gem "simplecov", "~> 0.17.0", :require => false
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
   gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
   # For running system tests
   gem 'puma'

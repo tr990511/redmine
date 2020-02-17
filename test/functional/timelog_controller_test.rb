@@ -1432,13 +1432,32 @@ class TimelogControllerTest < Redmine::ControllerTest
     end
   end
 
-  def test_index_grouped_by_issue
+  def test_index_with_inline_issue_long_text_custom_field_column
+    field = IssueCustomField.create!(:name => 'Long text', :field_format => 'text', :full_width_layout => '1',
+      :tracker_ids => [1], :is_for_all => true)
+    issue = Issue.find(1)
+    issue.custom_field_values = {field.id => 'This is a long text'}
+    issue.save!
+
     get :index, :params => {
         :set_filter => 1,
-        :group_by => 'issue'
+        :c => ['subject', 'description', "issue.cf_#{field.id}"]
       }
     assert_response :success
+    assert_select "td.issue_cf_#{field.id}", :text => 'This is a long text'
+  end
 
+  def test_edit_for_other_user
+    Role.find_by_name('Manager').add_permission! :log_time_for_other_users
+    @request.session[:user_id] = 2
+
+    get :edit, :params => {
+      :id => 1
+    }
+
+    assert_response :success
+
+<<<<<<< HEAD
     assert_select 'tr.group span.name', :text => 'Bug #1: Cannot print recipes' do
       assert_select '+ span.count', :text => '2'
     end
@@ -1469,6 +1488,8 @@ class TimelogControllerTest < Redmine::ControllerTest
 
     assert_response :success
 
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
     assert_select 'select[name=?]', 'time_entry[user_id]' do
       assert_select 'option[value="2"][selected=selected]'
     end

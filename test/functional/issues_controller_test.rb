@@ -972,7 +972,10 @@ class IssuesControllerTest < Redmine::ControllerTest
           :subject => str_utf8,
           :format => 'csv'
         }
+<<<<<<< HEAD
       )
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
       assert_equal 'text/csv', @response.media_type
       lines = @response.body.chomp.split("\n")
       header = lines[0]
@@ -995,7 +998,10 @@ class IssuesControllerTest < Redmine::ControllerTest
           :format => 'csv',
           :set_filter => 1
         }
+<<<<<<< HEAD
       )
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
       assert_equal 'text/csv', @response.media_type
       lines = @response.body.chomp.split("\n")
       header = lines[0]
@@ -1021,7 +1027,10 @@ class IssuesControllerTest < Redmine::ControllerTest
           :format => 'csv',
           :set_filter => 1
         }
+<<<<<<< HEAD
       )
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
       assert_equal 'text/csv', @response.media_type
       lines = @response.body.chomp.split("\n")
       assert_include "#{issue.id},1234.50,#{str1}", lines
@@ -1041,7 +1050,10 @@ class IssuesControllerTest < Redmine::ControllerTest
           :format => 'csv',
           :set_filter => 1
         }
+<<<<<<< HEAD
       )
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
       assert_equal 'text/csv', @response.media_type
       lines = @response.body.chomp.split("\n")
       assert_include "#{issue.id};1234,50;#{str1}", lines
@@ -2774,6 +2786,26 @@ class IssuesControllerTest < Redmine::ControllerTest
     )
     assert_response :success
     assert_equal 'application/pdf', @response.media_type
+    assert @response.body.starts_with?('%PDF')
+  end
+
+  def test_show_export_to_pdf_with_private_journal
+    Journal.create!(
+      :journalized => Issue.find(1),
+      :notes => 'Private notes',
+      :private_notes => true,
+      :user_id => 3
+    )
+    @request.session[:user_id] = 3
+    get(
+      :show,
+      :params => {
+        :id => 1,
+        :format => 'pdf'
+      }
+    )
+    assert_response :success
+    assert_equal 'application/pdf', @response.content_type
     assert @response.body.starts_with?('%PDF')
   end
 

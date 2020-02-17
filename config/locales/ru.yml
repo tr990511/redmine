@@ -1399,6 +1399,9 @@ ru:
   label_display_type_board: Панель
   label_my_bookmarks: Мои закладки
   label_import_time_entries: Импорт трудозатрат
+<<<<<<< HEAD
   field_toolbar_language_options: Code highlighting toolbar languages
   label_user_mail_notify_about_high_priority_issues_html: Also notify me about issues
     with a priority of <em>%{prio}</em> or higher
+=======
+>>>>>>> cb865710ec5f0ee05c469030df58ad107ce178c3
