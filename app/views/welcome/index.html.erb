@@ -19,12 +19,6 @@
   <%= call_hook(:view_welcome_index_right) %>
 </div>
 </div>
-<div>
-	
-	<h1>React Hello World</h1>
-<%= react_component("HelloWorld", props: @hello_world_props, prerender: true) %>
-
-</div>
 <% content_for :header_tags do %>
 <%= auto_discovery_link_tag(:atom, {:controller => 'news', :action => 'index', :key => User.current.rss_key, :format => 'atom'},
                                    :title => "#{Setting.app_title}: #{l(:label_news_latest)}") %>

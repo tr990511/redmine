@@ -18,7 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Rails.application.routes.draw do
-  #get '/hello_world', to: 'hello_world#index'
+  get '/hello_world', to: 'hello_world#index'
   #root :to => 'hello_world#index', :as => 'home'
   root :to => 'welcome#index', :as => 'home'
 
