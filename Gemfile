@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+#source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
 #react_on_rails
 gem "react_on_rails", "11.1.4" # Update to the current version
 gem "webpacker", "~> 3" # Newer versions might be supported
