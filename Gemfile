@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
-##test
+
+#react_on_rails
+gem "react_on_rails", "11.1.4" # Update to the current version
+gem "webpacker", "~> 3" # Newer versions might be supported
+
 ruby '>= 2.3.0', '< 2.7.0'
 gem 'bundler', '>= 1.12.0'
 
