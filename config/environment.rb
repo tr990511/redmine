@@ -14,3 +14,9 @@ end
 
 # Initialize the Rails application
 Rails.application.initialize!
+## log
+config.log_level = :debug     
+
+config.active_record.schema_format = :sql     
+
+config.logger = Logger.new(STDERR)
