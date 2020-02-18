@@ -1,6 +1,7 @@
 # Plugin's routes
 # See: http://guides.rubyonrails.org/routing.html
-get 'problem', :to => 'problem#index'
+get 'problems', :to => 'problem#index'
+post 'problem/:id', :to => 'problem#add'
 get 'problem/:id', :to => 'problem#show'
-post 'problem/:id', :to => 'problem#edit'
+put 'problem/:id', :to => 'problem#edit'
 delete 'problem/:id', :to => 'problem#delete'
