@@ -15,8 +15,9 @@ export default class Problem extends React.Component {
 	}
 	// 表单提交的响应函数
 	handleSubmit(event) {
-		console.log('login successfully');
-		let data = {uid: 1011}
+		console.log('login begin');
+		let data = this.state;
+		console.log(data);
 		let body = JSON.stringify(data, null, 2)
 		var myHeaders = new Headers();
 		var myInit = { method: 'post',
@@ -42,7 +43,7 @@ export default class Problem extends React.Component {
 		return (
 		<form onSubmit={this.handleSubmit}>
 			<label>
-				问题:
+				问题1:
 				{/* 通过value 设置input显示内容，通过onChange 监听 value的变化 */}
 				<input type="text" name="question" value= {this.state.question} onChange={this.handleChange} />
 			</label>
