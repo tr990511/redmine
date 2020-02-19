@@ -38,7 +38,7 @@ export default class Problem extends React.Component {
       .then(data => {
         this.setState({user: data})
       })
-      .catch(e => console.log('错误:', e))
+      .catch(e => console.log('error', e))
 		event.preventDefault();
 	}
 	render() {
