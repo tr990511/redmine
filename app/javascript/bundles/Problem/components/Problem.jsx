@@ -20,7 +20,11 @@ export default class Problem extends React.Component {
 		let body = JSON.stringify(data, null, 2)
 		var myHeaders = new Headers();
 		var myInit = { method: 'post',
-               headers: myHeaders,
+               //headers: myHeaders,
+			   headers: {
+					Accept: 'application/json', 
+					'Content-Type': 'application/json;charset=UTF-8'
+				},
                mode: 'cors',
                cache: 'default',
 			   body };
