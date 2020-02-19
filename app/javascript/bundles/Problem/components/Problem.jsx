@@ -15,7 +15,7 @@ export default class Problem extends React.Component {
 	}
 	// 表单提交的响应函数
 	handleSubmit(event) {
-		console.log('login successfully');
+		console.log(this.state);
 		event.preventDefault();
 	}
 	render() {
