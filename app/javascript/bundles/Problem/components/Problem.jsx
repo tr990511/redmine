@@ -30,7 +30,7 @@ export default class Problem extends React.Component {
 		  body
 		}
 
-		fetch("/problem/1",init)
+		fetch("/problem",init)
 		.then(res => res.text())
 		.then(
 			data => {
