@@ -22,17 +22,17 @@ export default class Problem extends React.Component {
 		return (
 		<form onSubmit={this.handleSubmit}>
 			<label>
-			问题:
-			{/* 通过value 设置input显示内容，通过onChange 监听
-			value的变化 */}
-			<input type="text" name="question" value= {this.state.question} onChange={this.handleChange} />
+				问题:
+				{/* 通过value 设置input显示内容，通过onChange 监听 value的变化 */}
+				<input type="text" name="question" value= {this.state.question} onChange={this.handleChange} />
 			</label>
 			<label>
-			描述:
-			<input type="text" name="description" value= {this.state.description} onChange={this.handleChange} />
+				描述:
+				<input type="text" name="description" value= {this.state.description} onChange={this.handleChange} />
 			</label>
-			上报人:
-			<input type="text" name="applyPerson" value= {this.state.applyPerson} onChange={this.handleChange} />
+			<label>
+				上报人:
+				<input type="text" name="applyPerson" value= {this.state.applyPerson} onChange={this.handleChange} />
 			</label>
 			<input type="submit" value="提交" />
 		</form>
