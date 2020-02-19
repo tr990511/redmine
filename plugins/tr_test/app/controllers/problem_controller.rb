@@ -1,26 +1,26 @@
 class ProblemController < ApplicationController
 
   def index
-    debugger
+    debugger()
   end
 
   def show
-    debugger
+    debugger()
   end
 
   def add
-    debugger
+    debugger()
   end
 
   def edit
-    debugger
+    debugger()
   end
 
   def show
-    debugger
+    debugger()
   end
 
   def delete
-    debugger
+    debugger()
   end
 end
