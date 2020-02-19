@@ -17,11 +17,11 @@ export default class Problem extends React.Component {
 	handleSubmit(event) {
 		console.log('login begin');
 		let initHeaders = new Headers();
-		initHeaders.append('Accept', 'application/json, text/plain, */*');
-		initHeaders.append('Cache-Control', 'no-cache');
-		initHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
-		let data = {uid: 1011}
-		let body = "uid=${data.uid}"
+		    initHeaders.append('Accept', 'application/json, text/plain, */*')
+    	initHeaders.append('Cache-Control', 'no-cache')
+    	initHeaders.append('Content-Type', 'application/json;charset=UTF-8')
+		let data = {uid: 1011};
+    	let body = JSON.stringify(data, null, 2);
 		const init = {
 		  method: 'POST',
 		  credentials: 'include', // cookies
