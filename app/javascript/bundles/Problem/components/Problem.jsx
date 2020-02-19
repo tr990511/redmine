@@ -20,7 +20,7 @@ export default class Problem extends React.Component {
 		console.log(data);
 		let body = JSON.stringify(data, null, 2)
 		var myHeaders = new Headers();
-		var myInit = { method: 'post',
+		var myInit = { method: 'get',
                //headers: myHeaders,
 			   headers: {
 					Accept: 'application/json', 
@@ -30,7 +30,7 @@ export default class Problem extends React.Component {
                cache: 'default',
 			   body };
 
-		fetch("/problem",myInit)
+		fetch("/problems",myInit)
 		.then(res => res.text())
 		.then(
 			data => {
