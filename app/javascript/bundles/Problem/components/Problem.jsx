@@ -31,12 +31,12 @@ export default class Problem extends React.Component {
 		}
 
 		fetch("/problem",init)
-		.then(res => res.text())
-		.then(
-			data => {
-				this.setState({mytext:data})
-			}
-		)
+		
+      .then(res => res.json())
+      .then(data => {
+        this.setState({user: data})
+      })
+      .catch(e => console.log('错误:', e));
 		event.preventDefault();
 	}
 	render() {
