@@ -1,7 +1,7 @@
 class ProblemController < ApplicationController
 
   def index
-    debugger
+ 
   end
 
   def show
@@ -22,5 +22,14 @@ class ProblemController < ApplicationController
 
   def delete
     debugger
+  end
+  
+  private
+  
+  def get_params
+    params.require(:kpi_year).permit(:name,
+                                      :yearly,
+                                      :project_id,
+                                      :author_id)
   end
 end
