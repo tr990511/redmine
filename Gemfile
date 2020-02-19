@@ -78,6 +78,7 @@ else
 end
 
 group :development do
+  gem 'byebug', '3.4.0'
   gem "yard"
 end
 
