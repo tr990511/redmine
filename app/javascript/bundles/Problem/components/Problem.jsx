@@ -15,7 +15,19 @@ export default class Problem extends React.Component {
 	}
 	// 表单提交的响应函数
 	handleSubmit(event) {
-		console.log(this.state);
+		console.log('login successfully');
+		let data = {uid: 1011}
+		let body = JSON.stringify(data, null, 2)
+		fetch("/problem",{
+			method: 'post',
+			credentials: 'include', // cookies
+			cache: 'no-cache ', // cookies
+			body
+			}).then(res => res.text()).then(
+			data => {
+			this.setState({mytext:data})
+			}
+		)
 		event.preventDefault();
 	}
 	render() {
