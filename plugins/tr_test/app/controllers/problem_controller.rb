@@ -1,7 +1,6 @@
 class ProblemController < ApplicationController
 
   def index
-  #123
     debugger
   end
 
