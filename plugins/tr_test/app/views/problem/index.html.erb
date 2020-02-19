@@ -1,10 +1,25 @@
 <h2>ProblemController#index</h2>
 <%= javascript_pack_tag 'problem-bundle' %>
 <%= react_component("Problem", prerender: false) %>
-<button id="test" type="button" >test</button>
+<button id="post" type="button" >post</button>
+<button id="put" type="button" >put</button>
 	<script>
 		$(document).ready(function(){
-			$("#test").click(function(){
+			$("#post").click(function(){
+				$.ajax({
+	                url: "/problem",
+	                data: {detail: 123},
+	                dataType: 'jsonp',
+	                type:"POST",
+	                success: function(data){
+						console.log("save success");
+	                },
+	                error: function(data){
+	                	console.log("save faile");
+	                }
+	            });
+			});	
+			$("#put").click(function(){
 				$.ajax({
 	                url: "/problem/1",
 	                data: {detail: 123},
