@@ -3,6 +3,7 @@
 <%= react_component("Problem", prerender: false) %>
 <button id="post" type="button" >post</button>
 <button id="put" type="button" >put</button>
+<button id="put" type="button" >delete</button>
 	<script>
 		$(document).ready(function(){
 			$("#post").click(function(){
@@ -24,7 +25,21 @@
 	                url: "/problem/1",
 	                data: {detail: 123},
 	                dataType: 'jsonp',
-	                type:"POST",
+	                type:"put",
+	                success: function(data){
+						console.log("save success");
+	                },
+	                error: function(data){
+	                	console.log("save faile");
+	                }
+	            });
+			});	
+			$("#delete").click(function(){
+				$.ajax({
+	                url: "/problem/1",
+	                data: {detail: 123},
+	                dataType: 'jsonp',
+	                type:"delete",
 	                success: function(data){
 						console.log("save success");
 	                },
