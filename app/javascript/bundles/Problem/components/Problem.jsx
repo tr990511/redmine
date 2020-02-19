@@ -16,29 +16,27 @@ export default class Problem extends React.Component {
 	// 表单提交的响应函数
 	handleSubmit(event) {
 		let initHeaders = new Headers()
-    initHeaders.append('Accept', 'application/json, text/plain, */*')
-    initHeaders.append('Cache-Control', 'no-cache')
-    initHeaders.append('Content-Type', 'application/json;charset=UTF-8')
+		initHeaders.append('Accept', 'application/json, text/plain, */*')
+		initHeaders.append('Cache-Control', 'no-cache')
+		initHeaders.append('Content-Type', 'application/json;charset=UTF-8')
 
-    let data = {uid: 1011}
-    let body = JSON.stringify(data, null, 2)
+		let data = {uid: 1011}
+		let body = JSON.stringify(data, null, 2)
 
-    const init = {
-      method: 'POST',
-      credentials: 'include', // cookies
-      cache: 'no-cache', // cookies
-      headers: initHeaders,
-      body
-    }
-    fetch(
-      '/problem',
-      init
-    )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({user: data})
-      })
-      .catch(e => console.log('error', e))
+		const init = {
+		  method: 'POST',
+		  credentials: 'include', // cookies
+		  cache: 'no-cache', // cookies
+		  headers: initHeaders,
+		  body
+		}
+		fetch(
+		  '/problem',init)
+		  .then(res => res.json())
+		  .then(data => {
+			//this.setState({user: data})
+		  })
+		  .catch('error');
 		event.preventDefault();
 	}
 	render() {
