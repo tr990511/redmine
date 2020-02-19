@@ -26,7 +26,7 @@ export default class Problem extends React.Component {
     const init = {
       method: 'POST',
       credentials: 'include', // cookies
-      cache: 'no-cache ', // cookies
+      cache: 'no-cache', // cookies
       headers: initHeaders,
       body
     }
