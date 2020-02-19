@@ -20,12 +20,13 @@ export default class Problem extends React.Component {
 		let body = JSON.stringify(data, null, 2)
 		fetch("/problem",{
 			method: 'post',
-			credentials: 'include', // cookies
-			cache: 'no-cache ', // cookies
+			//credentials: 'include', // cookies
+			//cache: 'no-cache', // cookies
 			body
-			}).then(res => res.text()).then(
+		}).then(res => res.text())
+		.then(
 			data => {
-			this.setState({mytext:data})
+				this.setState({mytext:data})
 			}
 		)
 		event.preventDefault();
